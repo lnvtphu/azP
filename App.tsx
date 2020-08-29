@@ -14,6 +14,9 @@ import {
 } from 'react-native';
 import Login from "./src/screens/login";
 import Students from "./src/screens/students";
+import Photos from "./src/screens/photos";
+
+
 
 declare const global: {HermesInternal: null | {}};
 

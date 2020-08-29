@@ -1,7 +1,7 @@
 export const students = [{
   "id": 1,
   "firstName": "Ines",
-  "lastName": "Gullis",
+  "lastName": "Gullis Chicken Cow Cat Dog Duck Sheep Buffalo Baby",
   "email": "igullis0@squidoo.com",
   "gender": "Female",
   "phone": "257-698-1866"

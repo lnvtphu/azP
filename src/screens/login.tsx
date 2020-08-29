@@ -16,6 +16,8 @@ import {
 import rat from "../assests/rat.png";
 
 const Login = () => {
+  const [username, onChangeUsername] = React.useState('');
+  const [pwd, onChangePwd] = React.useState('');
   return (
     <>
       <SafeAreaView style={styles.container}>
@@ -23,21 +25,27 @@ const Login = () => {
           <Image source={rat} style={styles.logo} resizeMode="contain"/>
           <View>
             <TextInput
+              value={username}
               maxLength={7}
+              autoFocus
+              autoCorrect
               style={styles.textInput}
               clearButtonMode="always"
               placeholder="Username"
               placeholderTextColor="#FFF"
+              onChangeText={text => onChangeUsername(text)}
             />
           </View>
           <View>
             <TextInput
+              value={pwd}
               style={styles.textInput}
               clearButtonMode="always"
               secureTextEntry={true}
               placeholder="Password"
               placeholderTextColor="#FFF"
               returnKeyType="done"
+              onChangeText={text => onChangePwd(text)}
             />
           </View>
           {/* <Button
@@ -45,7 +53,7 @@ const Login = () => {
             title="Log in"
             color="#00E2D6"
           /> */}
-          <TouchableOpacity style={styles.loginBtn} onPress={() => Alert.alert("login")}>
+          <TouchableOpacity style={styles.loginBtn} onPress={() => Alert.alert(`Username: ${username} - Pwd: ${pwd}`)}>
             <Text style={styles.loginText}>Login</Text>
           </TouchableOpacity>
       </KeyboardAvoidingView>
