@@ -12,10 +12,17 @@ import {
   KeyboardAvoidingView,
   Platform
 } from 'react-native';
+import { StackScreenProps } from '@react-navigation/stack';
 
 import rat from "../assests/rat.png";
+type RootStackParamList = {
+  Photos: undefined;
+  Login: undefined;
+};
 
-const Login = () => {
+type Props = StackScreenProps<RootStackParamList, 'Login'>;
+
+const Login = ({ navigation }: Props) => {
   const [username, onChangeUsername] = React.useState('');
   const [pwd, onChangePwd] = React.useState('');
   return (
@@ -53,7 +60,7 @@ const Login = () => {
             title="Log in"
             color="#00E2D6"
           /> */}
-          <TouchableOpacity style={styles.loginBtn} onPress={() => Alert.alert(`Username: ${username} - Pwd: ${pwd}`)}>
+          <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Photos', { username })}>
             <Text style={styles.loginText}>Login</Text>
           </TouchableOpacity>
       </KeyboardAvoidingView>
